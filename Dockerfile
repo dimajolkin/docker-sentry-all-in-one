@@ -56,9 +56,9 @@ ENV SENTRY_DB_USER 'postgres'
 ENV SENTRY_DB_PASSWORD 'postgres'
 ENV SENTRY_POSTGRES_PORT '5432'
 
-ENV AUTH_LOGIN='user1'
-ENV AUTH_PASWORD='fakepassword'
-ENV AUTH_EMAIL='your@email.com'
+ENV AUTH_LOGIN 'admin'
+ENV AUTH_PASSWORD 'admin'
+ENV AUTH_EMAIL 'admin@localhost.com'
 
 ENV SENTRY_CONF /etc/sentry
 RUN sentry init $SENTRY_CONF
@@ -73,8 +73,6 @@ RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w
   su postgres sh -c "psql -c \"ALTER ROLE postgres SUPERUSER;\" " && \
   sentry upgrade --noinput
   #cat /sentry.py | sentry shell
-  #sentry createuser --email $AUTH_LOGIN --password=$AUTH_PASWORD --superuser
-  #su postgres sh -c "psql -c \"\c sentry; update public.auth_user set email = 'user1@example.com' where username = '$AUTH_LOGIN';\" "
 
 ADD conf/bootstrap.py /etc/sentry/bootstrap.py
 RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w start" && \

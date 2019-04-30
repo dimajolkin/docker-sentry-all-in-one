@@ -275,32 +275,32 @@ SENTRY_WEB_OPTIONS = {
 # enable more "smart" configuration.
 
 ENV_CONFIG_MAPPING = {
-    'SENTRY_EMAIL_PASSWORD': 'mail.password',
-    'SENTRY_EMAIL_USER': 'mail.username',
-    'SENTRY_EMAIL_PORT': ('mail.port', Int),
-    'SENTRY_EMAIL_USE_TLS': ('mail.use-tls', Bool),
-    'SENTRY_EMAIL_HOST': 'mail.host',
-    'SENTRY_SERVER_EMAIL': 'mail.from',
-    'SENTRY_ENABLE_EMAIL_REPLIES': 'mail.enable-replies',
-    'SENTRY_SMTP_HOSTNAME': 'mail.reply-hostname',
-    'SENTRY_SECRET_KEY': 'system.secret-key',
+    # 'SENTRY_EMAIL_PASSWORD': 'mail.password',
+    # 'SENTRY_EMAIL_USER': 'mail.username',
+    # 'SENTRY_EMAIL_PORT': ('mail.port', Int),
+    # 'SENTRY_EMAIL_USE_TLS': ('mail.use-tls', Bool),
+    # 'SENTRY_EMAIL_HOST': 'mail.host',
+    # 'SENTRY_SERVER_EMAIL': 'mail.from',
+    # 'SENTRY_ENABLE_EMAIL_REPLIES': 'mail.enable-replies',
+    # 'SENTRY_SMTP_HOSTNAME': 'mail.reply-hostname',
+    # 'SENTRY_SECRET_KEY': 'system.secret-key',
 
     # If you're using mailgun for inbound mail, set your API key and configure a
     # route to forward to /api/hooks/mailgun/inbound/
-    'SENTRY_MAILGUN_API_KEY': 'mail.mailgun-api-key',
+    # 'SENTRY_MAILGUN_API_KEY': 'mail.mailgun-api-key',
 
-    'SLACK_CLIENT_ID': 'slack.client-id',
-    'SLACK_CLIENT_SECRET': 'slack.client-secret',
-    'SLACK_VERIFICATION_TOKEN': 'slack.verification-token',
-
-    'GITHUB_APP_ID': 'github-app.id',
-    'GITHUB_CLIENT_ID': 'github-app.client-id',
-    'GITHUB_CLIENT_SECRET': 'github-app.client-secret',
-    'GITHUB_WEBHOOK_SECRET': 'github-app.webhook-secret',
-    'GITHUB_PRIVATE_KEY': 'github-app.private-key',
-
-    'VSTS_CLIENT_ID': 'vsts.client-id',
-    'VSTS_CLIENT_SECRET': 'vsts.client-secret',
+    # 'SLACK_CLIENT_ID': 'slack.client-id',
+    # 'SLACK_CLIENT_SECRET': 'slack.client-secret',
+    # 'SLACK_VERIFICATION_TOKEN': 'slack.verification-token',
+    #
+    # 'GITHUB_APP_ID': 'github-app.id',
+    # 'GITHUB_CLIENT_ID': 'github-app.client-id',
+    # 'GITHUB_CLIENT_SECRET': 'github-app.client-secret',
+    # 'GITHUB_WEBHOOK_SECRET': 'github-app.webhook-secret',
+    # 'GITHUB_PRIVATE_KEY': 'github-app.private-key',
+    #
+    # 'VSTS_CLIENT_ID': 'vsts.client-id',
+    # 'VSTS_CLIENT_SECRET': 'vsts.client-secret',
 }
 
 

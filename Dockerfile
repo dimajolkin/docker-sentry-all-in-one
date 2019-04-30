@@ -77,12 +77,15 @@ RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w
   #su postgres sh -c "psql -c \"\c sentry; update public.auth_user set email = 'user1@example.com' where username = '$AUTH_LOGIN';\" "
 
 ADD conf/bootstrap.py /etc/sentry/bootstrap.py
-#RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w start" && \
+RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w start" && \
+    redis-server --daemonize yes && \
+    cat /etc/sentry/bootstrap.py | sentry shell
 
+ENV SENTRY_ENDPOINT localhost
 ADD conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # ports for sentry
-EXPOSE 9000
+EXPOSE 80
 
 # run supervisord in foreground
 CMD ["/usr/bin/supervisord", "--nodaemon"]

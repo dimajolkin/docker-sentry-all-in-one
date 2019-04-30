@@ -77,7 +77,7 @@ RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w
 ADD conf/bootstrap.py /etc/sentry/bootstrap.py
 RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w start" && \
     redis-server --daemonize yes && \
-    cat /etc/sentry/bootstrap.py | sentry shell
+    python2 /etc/sentry/bootstrap.py
 
 ENV SENTRY_ENDPOINT localhost
 ADD conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf

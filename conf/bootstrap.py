@@ -58,6 +58,6 @@ key.public_key = '5249ec00774a40dfbabc35c67cdc5f5b'
 key.secret_key = '2135ce3394d74cd187435bc2fe270cbb'
 key.save()
 
-print "Project id: " + project.id
-print "Public key: " + key.public_key
-print "Secret key: " + key.secret_key
+# print "Project id: " + project.id
+# print "Public key: " + key.public_key
+# print "Secret key: " + key.secret_key

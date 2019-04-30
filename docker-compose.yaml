@@ -5,5 +5,5 @@ services:
     build:
       context: .
     ports:
-      - 9000:9000
+      - 9000:80
       - 5432:5432

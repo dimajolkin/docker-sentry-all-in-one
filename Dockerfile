@@ -63,7 +63,7 @@ ENV AUTH_EMAIL='your@email.com'
 ENV SENTRY_CONF /etc/sentry
 RUN sentry init $SENTRY_CONF
 ADD conf/sentry.conf.py $SENTRY_CONF/sentry.conf.py
-ADD conf/bootstrap.py /etc/sentry/bootstrap.py
+
 
 RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w start" && \
   sleep 10 && \
@@ -76,7 +76,7 @@ RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w
   #sentry createuser --email $AUTH_LOGIN --password=$AUTH_PASWORD --superuser
   #su postgres sh -c "psql -c \"\c sentry; update public.auth_user set email = 'user1@example.com' where username = '$AUTH_LOGIN';\" "
 
-
+ADD conf/bootstrap.py /etc/sentry/bootstrap.py
 #RUN su - postgres -c "PGDATA=$PGDATA /usr/lib/postgresql/$PG_MAJOR/bin/pg_ctl -w start" && \
 
 ADD conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf

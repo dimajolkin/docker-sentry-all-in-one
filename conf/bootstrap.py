@@ -8,14 +8,8 @@ from sentry.models import (
     OrganizationMemberTeam
 )
 
-organization = Organization()
-organization.name = 'MyOrg'
-organization.save()
-
-team = Team()
-team.name = 'Sentry'
-team.organization = organization
-team.save()
+organization = Organization.objects.filter(id=1)[0]
+team = Team.objects.filter(id=1)[0]
 
 project = Project()
 project.team = team

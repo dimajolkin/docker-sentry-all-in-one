@@ -1,0 +1,9 @@
+version: '2.2'
+services:
+  app:
+    image: 115981514437.dkr.ecr.us-east-1.amazonaws.com/tp/sentry:base
+    build:
+      context: .
+    ports:
+      - 9000:9000
+      - 5432:5432
